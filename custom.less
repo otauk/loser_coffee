@@ -1,0 +1,286 @@
+// Custom CSS
+
+/*
+*	=============================================
+*	COLORS
+*	=============================================
+*/
+@color-base: 		rgb(255,255,255);	// weiß
+@color-0: 			rgb(000,000,000);	// schwarz
+@color-navgruen: 			#adbf69;
+@color-buttongruen:		#909d57;
+@color-head_braun:		#86603b;
+@color-footer_bg:		#3d2b1d;
+@color-headline:			#c5cba5;
+@color-footer_link:			#b18e6e;
+@color-font_base:			#333;
+/*
+*	=============================================
+*	FONTS
+*	=============================================
+*/
+
+@font-face {
+    font-family: 'geared';
+    src: url('fonts/geared_slab_bold/gearedslab-bold-webfont.eot');
+    src: url('fonts/geared_slab_bold/gearedslab-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/geared_slab_bold/gearedslab-bold-webfont.woff2') format('woff2'),
+         url('fonts/geared_slab_bold/gearedslab-bold-webfont.woff') format('woff'),
+         url('fonts/geared_slab_bold/gearedslab-bold-webfont.ttf') format('truetype'),
+         url('fonts/geared_slab_bold/gearedslab-bold-webfont.svg#geared_slabbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lavanderia';
+    src: url('fonts/lavanderia/lavanderia_regular-webfont.eot');
+    src: url('fonts/lavanderia/lavanderia_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lavanderia/lavanderia_regular-webfont.woff2') format('woff2'),
+         url('fonts/lavanderia/lavanderia_regular-webfont.woff') format('woff'),
+         url('fonts/lavanderia/lavanderia_regular-webfont.ttf') format('truetype'),
+         url('fonts/lavanderia/lavanderia_regular-webfont.svg#lavanderia_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.font-base () {
+	font-family:  serif;
+	font-weight: normal;
+	font-style: normal;
+	}
+.font-sans () {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	}
+.font-uppercase () {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	}
+.font-FA () {
+	font-family: 'FontAwesome';
+	font-weight: normal;
+	font-style: normal;
+	}
+
+@fs-base:			17px;
+@fs-large:         	ceil((@fs-base * 1.25)); //
+@fs-small:         	ceil((@fs-base * 0.85)); //
+@fs-h1:            	floor((@fs-base * 2.6)); //
+@fs-h2:            	floor((@fs-base * 1.45)); //
+@fs-h3:            	ceil((@fs-base * 1.7)); //
+@fs-h4:            	ceil((@fs-base * 1.25)); //
+@fs-h5:            	@fs-base;
+@fs-h6:            	ceil((@fs-base * 0.85)); //
+@fs-button:			29px;
+@fs-footer-h2:	26px;
+@fs-footer-text:	16px;
+
+@line-height-base:	ceil((@fs-base * 1.75));
+
+/*
+*	=============================================
+*	LAYOUT STYLES
+*	=============================================
+*/
+
+// Grid components
+@outer-container:	1920px;
+@inner-container:	1110px;
+@breakpoint-small:  768px;
+@breakpoint-medium: 992px;
+@breakpoint-large:  1200px;
+
+@space-base: 		15px;
+@space-large: 		ceil((@space-base * 2.0));
+
+/*
+*	=============================================
+*	MIXINS
+*	=============================================
+*/
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.hyphen () {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+	}
+
+/*
+*	=============================================
+*	SITE-SPECIFIC (auslagern)
+*	=============================================
+*/
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	body
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+*{box-sizing: border-box;}
+
+html, body {height: 100%;}
+
+body {
+	.font-sans ();
+	.hyphen();
+	font-size: @fs-base;
+	color: @color-font_base;
+	margin: 0;
+	overflow-x: hidden;
+	line-height: @line-height-base;
+}
+
+.wrapper {
+	max-width:100%;
+	margin: 0 auto;
+}
+
+.inner_wrapper {
+	max-width:@inner-container;
+	margin:0 auto;
+}
+
+.site-branding {
+	z-index:10001;
+	margin:0 auto;
+	width:100%;
+	text-align: center;
+}
+
+.site-content {
+	position: relative;
+}
+
+.site-footer {
+	background-color: @color-footer_bg;
+	padding:@space-base;
+	color:@color-footer_link;
+}
+
+.siteFooterContent {
+	width: @inner-container;
+	margin: 0 auto;
+}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	links
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+a {
+	&:link, &:visited {
+		color:@color-headline;
+		text-decoration: none;
+	}
+	&:hover, &:active, &:focus {
+		text-decoration: underline;
+	}
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	text
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+h1, h2, h3, h4, h5, h6 {
+	.font-base ();
+
+}
+h1 {
+	font-size: @fs-h1;
+	color:@color-headline;
+	line-height: @fs-h1;
+	font-family: "lavanderia";
+	}
+
+h2 {
+	font-size:@fs-h2;
+	color:@color-head_braun;
+	margin:0;
+	}
+
+.site-footer h2 {
+	font-size: @fs-footer-h2;
+	color: @color-head_braun;
+	text-transform: uppercase;
+}
+
+.site-footer a {
+	color: @color-footer_link;
+}
+
+p {
+	padding: @space-base 0;
+}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	navi
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.mainNavigation {
+	position: relative;
+	width: 100%;
+	z-index: 5000;
+	background-color: @color-navgruen;
+	font-family: "geared";
+	font-size: larger;
+
+	& ul {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	& li {
+		display: inline-block;
+		padding: @space-base 0;
+
+		& a {
+			display: block;
+			width:150px;
+			text-transform: uppercase;
+			color: @color-base;
+
+			&:hover {
+				color:@color-head_braun;
+				text-decoration: none;
+			}
+		}
+	}
+
+	& .logoSpacer {
+		// Breite des Logos?
+		width:150px;
+
+	}
+}
+
+.navLogo {
+	background: url("img/logo.png") no-repeat;
+	position: absolute;
+	z-index: 10000;
+	@logor: 80px;
+	width:@logor;
+	height:@logor;
+	left: (@inner-container/2) - @logor/2;
+	top:0px;
+}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	header
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.headerImg {
+	background: url("img/header.jpg") no-repeat;
+	height:400px;
+	background-size: contain;
+}
