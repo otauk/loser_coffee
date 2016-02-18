@@ -8,46 +8,61 @@
  */
 ?>
 
-	</div><!-- #content -->
-</div><!-- .inner_wrapper -->
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="siteFooterContent">
-		<div class="col-md-2">
+</div>
+
+<div class="footer_bg">
+	<div class="row footer">
+		<div class="col-md-2 footerBorder noshow">
 			<h2>Allgemein</h2>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
+			<a href="#">Über uns</a><br/>
+			<a href="#">Röstmaschine</a><br/>
+			<a href="#">Wissensdurst</a><br/>
+			<a href="#">Kontakt</a><br/>
+			<a href="#">Impressum</a><br/>
+			<a href="#">Datenschutz</a><br/>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2 footerBorder noshow">
 			<h2>Shop</h2>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
-			<a href="#">Link</a><br/>
+			<a href="#">Produkte</a><br/>
+			<a href="#">Versandkosten</a><br/>
+			<a href="#">Bezahlarten</a><br/>
+			<a href="#">AGB</a><br/>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2 col-xs-3">
 			<h2>Kontakt</h2>
-			Name<br/>
-			Adresse<br/>
-			Telefon<br/>
-			Mails
+			Loser Coffee<br/>
+			Strasse<br/>
+			33100 Paderborn<br/>
+			05251 | 12 23 45<br/>
+			info@loser-coffee.de
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2 noshow">
 
 		</div>
-		<div class="col-md-2">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" />
+		<div class="col-md-2 noshow">
+			<div class="footerLogo"></div>
 		</div>
-		<div class="col-md-2">
-		Warenkorb
-		</div>
-		</div>
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		<div class="col-md-2 col-xs-3">
+			<div class="footerBanner">
 
-<?php wp_footer(); ?>
+					<h2>Mein<br/> Warenkorb</h2>
+					<div class="icon-warenkorb">
+					</div>
+					[$anzahl]
+					<hr/>
+					<div class="icon-preis">
+					</div>
+					[$amount]
+					<hr/>
+					<h2 class="white">>> Kasse</h2>
+
+			</div>
+
+		</div>
+	</div>
+
+
 </div><!-- .wrapper -->
+</div>
 </body>
 </html>
