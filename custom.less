@@ -22,6 +22,8 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
+@import url("iconstyle.css");
+
 @font-face {
     font-family: 'geared';
     src: url('fonts/geared_slab_bold/gearedslab-bold-webfont.eot');
@@ -164,7 +166,7 @@ body {
 * 	links
 *	%%%%%%%%%%%%%%%%%%%%
 */
-.content a {
+a  {
 	&:link, &:visited {
 		color:@color-buttongruen;
 		text-decoration: none;
@@ -172,6 +174,8 @@ body {
 	&:hover, &:active, &:focus {
 		color:@color-head_braun;
 	}
+
+	&.forward {
 
 	&:before {
 		font-family: "geared";
@@ -182,6 +186,7 @@ body {
 	&.imglink:before {
 		content:"";
 		padding:0;
+	}
 	}
 }
 
@@ -321,6 +326,43 @@ p {
 	}
 }
 
+/*
+* ###############
+* ##### SHOP #####
+* ###############
+*/
+
+.zubereitung {
+	background: url("img/exports/bg_pattern.jpg") repeat-x;
+	border-bottom: 8px solid  @color-head_braun;
+	padding-bottom: 60px;
+	text-align: center;
+
+	& h1 {
+		color:@color-head_braun;
+	}
+
+	& ul {
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0;
+
+		& li {
+			display: inline;
+			padding: 0 15px;
+
+			& img {
+				width:40px;
+				height: 40px;
+				background: black;
+			}
+		}
+	}
+}
+
+
+
+
 .footerLogo {
 	background: url("img/exports/loser_coffee_footer.png") no-repeat;
 	width: 130px;
@@ -357,7 +399,7 @@ p {
 		}
 	}
 
-	& .icon-warenkorb:before, .icon-preis:before {
+	& .icon-warenkorb:before, .icon-geld:before {
 		color: #333;
 		font-size: @fs-base*1.5;
 	}
@@ -381,6 +423,8 @@ p {
 	background-color: @color-navgruen;
 	font-family: "geared";
 	font-size: 18px;
+	letter-spacing: 1px;
+	color: @color-base;
 
 	& ul {
 		margin: 0;
@@ -391,10 +435,15 @@ p {
 	& li {
 		display: inline-block;
 		padding: @space-base 0;
+		width:150px;
+
+	&.checkout {
+		width:200px;
+	}
+
 
 		& a {
 			display: block;
-			width:150px;
 			text-transform: uppercase;
 			color: @color-base;
 
@@ -408,8 +457,13 @@ p {
 	& .logoSpacer {
 		// Breite des Logos?
 		width:150px;
-
 	}
+
+	& .icon-warenkorb:before, .icon-geld:before {
+		color: #333;
+		font-size: @fs-base*1.5;
+	}
+
 }
 
 .navLogo {
@@ -439,38 +493,7 @@ p {
 * 	icon-font
 *	%%%%%%%%%%%%%%%%%%%%
 */
-@font-face {
-    font-family: 'icomoon';
-    src:    url('fonts/icomoon/icomoon.eot?cfi5ng');
-    src:    url('fonts/icomoon/icomoon.eot?cfi5ng#iefix') format('embedded-opentype'),
-        url('fonts/icomoon/icomoon.ttf?cfi5ng') format('truetype'),
-        url('fonts/icomoon/icomoon.woff?cfi5ng') format('woff'),
-        url('fonts/icomoon/icomoon.svg?cfi5ng#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
-[class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-warenkorb:before {
-    content: "\1f45d";
-}
-.icon-preis:before {
-    content: "\1f4b5";
-}
 
 /*
 *	%%%%%%%%%%%%%%%%%%%%
@@ -484,8 +507,72 @@ p {
 	.noshow {
 		display: none;
 	}
+}
 
-	}
+// Ribbon
+.ribbon {
+  position: relative;
+  background: @color-navgruen;
+  width:1160px;
+  margin: 0 auto;
+}
 
+.ribbon::before, .ribbon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -25px;
+  border: 30px solid @color-navgruen ;
+  z-index: -1;
+}
+
+.ribbon::before {
+  left: -30px;
+  border-right-width: 40px;
+  border-left-color: transparent;
+  border-left-width: 15px;
+}
+
+.ribbon::after {
+  right: -30px;
+  border-left-width: 40px;
+  border-right-color: transparent;
+  border-right-width: 15px;
+}
+
+.ribbon .ribbon-fold:before,
+.ribbon .ribbon-fold:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: @color-buttongruen transparent transparent transparent;
+  bottom: -25px;
+}
+
+.ribbon .ribbon-fold:before {
+  left: 0;
+  border-width: 25px 0 0 25px;
+}
+
+.ribbon .ribbon-fold:after {
+  right: 0;
+  border-width: 25px 25px 0 0;
+}
+
+.non-semantic-protector { position: relative; z-index: 1; }
+
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	Shop Elemente
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+
+.woocommerce ul.products li.product .button {
+	background: @color-head_braun;
+	color: #fff;
+	border-radius:0;
+}
 
 

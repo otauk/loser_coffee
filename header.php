@@ -6,7 +6,8 @@
  *
  * @package losercoffee
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -22,27 +23,31 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'losercoffee' ); ?></a>
+
+<div class="non-semantic-protector">
+	<div class="ribbon">
+		<div class="ribbon-fold">
+			<nav id="site-navigation" class="mainNavigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'losercoffee' ); ?></button>
+					<ul>
+						<li><a href="ueber-uns">über uns</a></li>
+						<li><a href="roestverfahren">röstverfahren</a></li>
+						<li><a href="shop">shop</a></li>
+						<li class="logoSpacer"></li>
+						<li><a href="wissensdurst">wissensdurst</a></li>
+						<li><a href="kontakt">kontakt</a></li>
+						<li class="checkout">
+							<span class="icon-warenkorb"></span>
+							<span class="">[$items]</span>
+							<span class="icon-geld"></span>
+							[$amount]
+						</li>
+					</ul>
+				<a href="willkommen"><div class="navLogo"></div></a>
+			</nav>
+		</div>
+	</div>
+</div>
+
 <div class="wrapper">
-	<header id="masthead" class="site-header" role="banner">
-
-		<nav id="site-navigation" class="mainNavigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'losercoffee' ); ?></button>
-			<ul>
-				<li><a href="ueber-uns">über uns</a></li>
-				<li><a href="ueber-uns">röstverfahren</a></li>
-				<li><a href="shop">shop</a></li>
-				<li class="logoSpacer"></li>
-				<li><a href="">wissensdurst</a></li>
-				<li><a href="">kontakt</a></li>
-				<li><a href="">warenkorb</a></li>
-			</ul>
-			<a href="willkommen"><div class="navLogo"></div></a>
-
-			<!--
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				-->
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-
 	<div id="content" class="content">

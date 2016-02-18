@@ -50,7 +50,7 @@
 					</div>
 					[$anzahl]
 					<hr/>
-					<div class="icon-preis">
+					<div class="icon-geld">
 					</div>
 					[$amount]
 					<hr/>

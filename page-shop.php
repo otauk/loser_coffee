@@ -1,3 +1,4 @@
+<?php /* Template Name: customShop */ ?>
 <?php
 /**
  * The template for displaying all pages.
@@ -18,7 +19,7 @@ get_header(); ?>
 			<h1>Bevorzugte Zubereitungsart</h1>
 			<ul>
 				<li>
-					<span class="filterkaffee"></span>
+					<span class="icon-filterkaffee"></span>
 				</li>
 				<li>
 					<img src="" />
@@ -39,17 +40,9 @@ get_header(); ?>
 	</div>
 </div>
 
-<div class="row shopItems">
-	<div class="col-md-12">
-		<?php woocommerce_content(); ?>
-	</div>
-</div>
+
+
+
 
 
 <?php get_footer(); ?>
-
-
-
-
-
-

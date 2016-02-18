@@ -1,3 +1,4 @@
+<?php /* Template Name: customWillkommen */ ?>
 <?php
 /**
  * The template for displaying all pages.
@@ -68,7 +69,7 @@ get_header(); ?>
 		<h2>Kleine Kaffeekunde</h2>
 		Heutzutage existieren Geräte welche wesentlich kleinere Bildpunkte darstellen können (auch wenn Sie wohl eine Lupe brauchen um sie zu erkennen). Aber Dokumente aus dem letzten Jahrhundert welche px in CSS nutzten sehen noch immer gleich aus, unabhängig vom verwendeten Gerät. Drucker im Speziellen können Linien, wesentlich kleiner als 1px, darstellen, eine 1px Linie sieht aber ziemlich genauso aus wie auf dem Monitor. Geräte ändern sich, aber px besitzt immer das gleiche Aussehen.
 		<p>
-			<a href="">weiterlesen </a>
+			<a class="forward" href="">weiterlesen </a>
 		</p>
 	</div>
 	<div class="col-md-2">
