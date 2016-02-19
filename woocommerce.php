@@ -18,22 +18,19 @@ get_header(); ?>
 			<h1>Bevorzugte Zubereitungsart</h1>
 			<ul>
 				<li>
-					<span class="filterkaffee"></span>
+					<a class="icons filterkaffee"></a>
 				</li>
 				<li>
-					<img src="" />
+					<a class="icons herdkanne"></a>
 				</li>
 				<li>
-					<img src="" />
+					<a class="icons frenchpress"></a>
 				</li>
 				<li>
-					<img src="" />
+					<a class="icons siebträger"></a>
 				</li>
 				<li>
-					<img src="" />
-				</li>
-				<li>
-					<img src="" />
+					<a class="icons vollautomat"></a>
 				</li>
 			</ul>
 	</div>

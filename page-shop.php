@@ -19,10 +19,11 @@ get_header(); ?>
 			<h1>Bevorzugte Zubereitungsart</h1>
 			<ul>
 				<li>
-					<span class="icon-filterkaffee"></span>
+					<div class="icon-filterkaffee">
+					</div>
 				</li>
 				<li>
-					<img src="" />
+
 				</li>
 				<li>
 					<img src="" />

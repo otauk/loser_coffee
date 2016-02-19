@@ -228,9 +228,6 @@ h2 {
 	color: @color-footer_link;
 }
 
-p {
-	padding: @space-base 0;
-}
 
 .row {
 	margin-left: 30px;
@@ -255,13 +252,17 @@ p {
 	margin-bottom: -15px;
 	position: relative;
 	z-index: 1000;
-	width: 1050px;
 }
 
 .sortiment {
 	background: url("img/exports/bg_pattern.jpg") repeat-x;
 	border-bottom: 2px dashed @color-head_braun;
 	padding-bottom: 60px;
+	margin: 0 auto;
+
+	& .content {
+		margin:0 30px;
+	}
 
 	& .frame {
 		height:225px;
@@ -326,6 +327,25 @@ p {
 	}
 }
 
+.ueberuns {
+
+	& .teamfoto {
+		margin-top: 75px;
+		border: 4px solid @color-navgruen;
+	}
+}
+
+.roesterei {
+
+	& .maschine {
+		margin-top: 75px;
+		border: 4px solid @color-navgruen;
+	}
+}
+
+.kontakt {
+}
+
 /*
 * ###############
 * ##### SHOP #####
@@ -335,8 +355,10 @@ p {
 .zubereitung {
 	background: url("img/exports/bg_pattern.jpg") repeat-x;
 	border-bottom: 8px solid  @color-head_braun;
-	padding-bottom: 60px;
+	padding-bottom: 30px;
 	text-align: center;
+	// Seitenbreite
+	margin: 0 auto;
 
 	& h1 {
 		color:@color-head_braun;
@@ -346,10 +368,12 @@ p {
 		list-style-type: none;
 		margin: 0 auto;
 		padding: 0;
+		margin-top: 30px;
 
 		& li {
 			display: inline;
 			padding: 0 15px;
+			width: 40px;
 
 			& img {
 				width:40px;
@@ -357,6 +381,53 @@ p {
 				background: black;
 			}
 		}
+	}
+
+	& a {
+		text-decoration: none;
+		color: @color-navgruen;
+	}
+
+
+	& .filterkaffee {
+		font-family: 'losericons';
+		font-size: @fs-base*5;
+
+		&::before {content: "\e905";}
+		&:hover:before {content: "\e900";}
+	}
+
+	& .herdkanne {
+
+		font-family: 'losericons';
+		font-size: @fs-base*5;
+
+		&::before {content: "\e906";}
+		&:hover:before {content: "\e901";}
+	}
+
+	& .frenchpress {
+		font-family: 'losericons';
+		font-size: @fs-base*5;
+
+		&::before {content: "\e907";}
+		&:hover:before {content: "\e902";}
+	}
+
+	& .siebträger {
+		font-family: 'losericons';
+		font-size: @fs-base*5;
+
+		&::before {content: "\e908";}
+		&:hover:before {content: "\e903";}
+	}
+
+	& .vollautomat {
+		font-family: 'losericons';
+		font-size: @fs-base*5;
+
+		&::before {content: "\e909";}
+		&:hover:before {content: "\e904";}
 	}
 }
 
@@ -483,16 +554,18 @@ p {
 *	%%%%%%%%%%%%%%%%%%%%
 */
 .headerImg {
-	background: url("img/cafe_loser_paderborn.jpg") no-repeat;
-	height:350px;
-	border-bottom: 10px solid @color-head_braun;
-}
 
-/*
-*	%%%%%%%%%%%%%%%%%%%%
-* 	icon-font
-*	%%%%%%%%%%%%%%%%%%%%
-*/
+
+	& img {
+		display: block;
+		max-height:350px;
+		max-width: 1110px;
+		width: auto;
+		height: auto;
+		border-bottom: 10px solid @color-head_braun;
+	}
+
+}
 
 
 /*
@@ -568,6 +641,9 @@ p {
 * 	Shop Elemente
 *	%%%%%%%%%%%%%%%%%%%%
 */
+
+
+
 
 .woocommerce ul.products li.product .button {
 	background: @color-head_braun;

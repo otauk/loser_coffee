@@ -1,96 +1,48 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Please note that this is the WordPress construct of pages and that
+ * other 'pages' on your WordPress site will use a different template.
  *
- * @package losercoffee
+ * @package WordPress
+ * @subpackage Twenty_Fourteen
+ * @since Twenty Fourteen 1.0
  */
 
 get_header(); ?>
 
+<div id="main-content" class="main-content">
 
-<div  class="headerImg"></div>
-<div class="row">
-	<div class="col-md-12">
-		<div class="spacing">
-			<h1>Herzlich willkommen</h1>
-			<div class="zweispaltig">
-				Heutzutage existieren Geräte welche wesentlich kleinere Bildpunkte darstellen können (auch wenn Sie wohl eine Lupe brauchen um sie zu erkennen). Aber Dokumente aus dem letzten Jahrhundert welche px in CSS nutzten sehen noch immer gleich aus, unabhängig vom verwendeten Gerät. Drucker im Speziellen können Linien, wesentlich kleiner als 1px, darstellen, eine 1px Linie sieht aber ziemlich genauso aus wie auf dem Monitor. Geräte ändern sich, aber px besitzt immer das gleiche Aussehen.
-			</div>
-		</div>
-	</div>
-</div>
+<?php
+	if ( is_front_page() && twentyfourteen_has_featured_posts() ) {
+		// Include the featured content template.
+		get_template_part( 'featured-content' );
+	}
+?>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 
-<div class="coffeebeansborder"></div>
+			<?php
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
 
-<div class="row sortiment">
-	<div class="col-md-12">
-		<h2>Unser Sortiment</h2>
-	</div>
-		<div class="col-md-4">
-			<a href="" class="imglink">
-				<div class="frame">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/kaffeebohnen_frisch.jpg" />
-					<div class="text">
-						<span class="handmade">Handmade</span><span class="category">Coffee</span><span class="arrows"></span>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="" class="imglink">
-				<div class="frame">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/kaffeebohnen_frisch.jpg" />
-					<div class="text">
-						<span class="handmade">Handmade</span><span class="category">Espresso</span><span class="arrows"></span>
-					</div>
-				</div>
+					// Include the page content template.
+					get_template_part( 'content', 'page' );
 
-		</div>
-		<div class="col-md-4">
-			<a href="" class="imglink">
-				<div class="frame">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/kaffeebohnen_frisch.jpg" />
-					<div class="text">
-						<span class="category">Probierpakete</span><span class="arrows"></span>
-					</div>
-				</div>
-			</a>
-		</div>
-</div>
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					}
+				endwhile;
+			?>
 
-<div class="row kaffekunde">
-	<div class="col-md-6">
-		<h2>Kleine Kaffeekunde</h2>
-		Heutzutage existieren Geräte welche wesentlich kleinere Bildpunkte darstellen können (auch wenn Sie wohl eine Lupe brauchen um sie zu erkennen). Aber Dokumente aus dem letzten Jahrhundert welche px in CSS nutzten sehen noch immer gleich aus, unabhängig vom verwendeten Gerät. Drucker im Speziellen können Linien, wesentlich kleiner als 1px, darstellen, eine 1px Linie sieht aber ziemlich genauso aus wie auf dem Monitor. Geräte ändern sich, aber px besitzt immer das gleiche Aussehen.
-		<p>
-			<a href="">weiterlesen </a>
-		</p>
-	</div>
-	<div class="col-md-2">
-		<div class="frame">
-				<img src="" />
-			</div>
+		</div><!-- #content -->
+	</div><!-- #primary -->
+	<?php get_sidebar( 'content' ); ?>
+</div><!-- #main-content -->
 
-	</div>
-	<div class="col-md-2">
-		<div class="frame">
-				<img src="" />
-			</div>
-
-	</div>
-	<div class="col-md-2">
-		<div class="frame">
-				<img src="" />
-			</div>
-
-	</div>
-</div>
-
-
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

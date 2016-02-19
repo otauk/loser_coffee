@@ -1,11 +1,11 @@
-<?php /* Template Name: customWissensdurst */ ?>
+<?php /* Template Name: customRoesterei */ ?>
 <?php
 /**
  * @package losercoffee
  */
 
 get_header(); ?>
-	<div class="row wissensdurst">
+	<div class="row roesterei">
 		<div class="col-md-6">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php endif; ?>
 		</div>
 		<div class="col-md-6">
-			<div class="teamfoto">
+			<div class="maschine">
 				<?php the_post_thumbnail(); ?>
 			</div>
 		</div>

@@ -14,21 +14,35 @@
 get_header(); ?>
 
 
-<div  class="headerImg"></div>
+<div  class="headerImg">
+	<?php the_post_thumbnail(); ?>
+</div>
 <div class="row">
 	<div class="col-md-12">
-		<div class="spacing">
-			<h1>Herzlich willkommen</h1>
+				<h1><?php the_title() ;?></h1>
 			<div class="zweispaltig">
-				Heutzutage existieren Geräte welche wesentlich kleinere Bildpunkte darstellen können (auch wenn Sie wohl eine Lupe brauchen um sie zu erkennen). Aber Dokumente aus dem letzten Jahrhundert welche px in CSS nutzten sehen noch immer gleich aus, unabhängig vom verwendeten Gerät. Drucker im Speziellen können Linien, wesentlich kleiner als 1px, darstellen, eine 1px Linie sieht aber ziemlich genauso aus wie auf dem Monitor. Geräte ändern sich, aber px besitzt immer das gleiche Aussehen.
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php
+					clean_text();
+
+					 ;?>
+				<?php endwhile; else: ?>
+				<?php endif; ?>
 			</div>
-		</div>
 	</div>
 </div>
 
 <div class="coffeebeansborder"></div>
 
+<?php
+// kaffeekunde post
+$post = get_post( 69 );
+$title = $post->post_title;
+$content = $post->post_content;
+?>
+
 <div class="row sortiment">
+	<div class="content">
 	<div class="col-md-12">
 		<h2>Unser Sortiment</h2>
 	</div>
@@ -62,12 +76,15 @@ get_header(); ?>
 				</div>
 			</a>
 		</div>
+		</div>
 </div>
 
 <div class="row kaffekunde">
 	<div class="col-md-6">
-		<h2>Kleine Kaffeekunde</h2>
-		Heutzutage existieren Geräte welche wesentlich kleinere Bildpunkte darstellen können (auch wenn Sie wohl eine Lupe brauchen um sie zu erkennen). Aber Dokumente aus dem letzten Jahrhundert welche px in CSS nutzten sehen noch immer gleich aus, unabhängig vom verwendeten Gerät. Drucker im Speziellen können Linien, wesentlich kleiner als 1px, darstellen, eine 1px Linie sieht aber ziemlich genauso aus wie auf dem Monitor. Geräte ändern sich, aber px besitzt immer das gleiche Aussehen.
+		<h2><?=$title;?></h2>
+		<p>
+			<?=$content;?>
+		</p>
 		<p>
 			<a class="forward" href="">weiterlesen </a>
 		</p>

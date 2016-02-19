@@ -31,7 +31,7 @@
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'losercoffee' ); ?></button>
 					<ul>
 						<li><a href="ueber-uns">über uns</a></li>
-						<li><a href="roestverfahren">röstverfahren</a></li>
+						<li><a href="roesterei">die rösterei</a></li>
 						<li><a href="shop">shop</a></li>
 						<li class="logoSpacer"></li>
 						<li><a href="wissensdurst">wissensdurst</a></li>

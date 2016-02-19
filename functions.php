@@ -156,3 +156,30 @@ function wp_enqueue_woocommerce_style(){
 }
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
 */
+
+function clean_text () {
+	ob_start();
+		the_content();
+		$old_content = ob_get_clean();
+		$new_content = strip_tags($old_content, '<p><a><b><br />');
+		echo $new_content;
+}
+
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Header-Bild',
+            'id' => 'header-image',
+            'post_type' => 'page'
+        )
+    );
+}
+
+function header_img() {
+	if (class_exists('MultiPostThumbnails')) :
+    MultiPostThumbnails::the_post_thumbnail(
+        get_post_type(),
+        'header-image'
+    );
+	endif;
+}
