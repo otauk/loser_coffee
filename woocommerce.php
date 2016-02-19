@@ -18,19 +18,19 @@ get_header(); ?>
 			<h1>Bevorzugte Zubereitungsart</h1>
 			<ul>
 				<li>
-					<a class="icons filterkaffee"></a>
+					<a class="filterkaffee" href="http://localhost:8888/loser_coffee/produkt-kategorie/filterkaffee/"></a>
 				</li>
 				<li>
-					<a class="icons herdkanne"></a>
+					<a class=" herdkanne"></a>
 				</li>
 				<li>
-					<a class="icons frenchpress"></a>
+					<a class=" frenchpress"></a>
 				</li>
 				<li>
-					<a class="icons siebträger"></a>
+					<a class=" siebträger"></a>
 				</li>
 				<li>
-					<a class="icons vollautomat"></a>
+					<a class=" vollautomat"></a>
 				</li>
 			</ul>
 	</div>

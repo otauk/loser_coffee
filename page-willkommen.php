@@ -15,7 +15,7 @@ get_header(); ?>
 
 
 <div  class="headerImg">
-	<?php the_post_thumbnail(); ?>
+	<?=header_img();?>
 </div>
 <div class="row">
 	<div class="col-md-12">
@@ -33,13 +33,6 @@ get_header(); ?>
 </div>
 
 <div class="coffeebeansborder"></div>
-
-<?php
-// kaffeekunde post
-$post = get_post( 69 );
-$title = $post->post_title;
-$content = $post->post_content;
-?>
 
 <div class="row sortiment">
 	<div class="content">
@@ -79,6 +72,12 @@ $content = $post->post_content;
 		</div>
 </div>
 
+<?php
+	// kaffeekunde post
+$post = get_post( 44 );
+$title = $post->post_title;
+$content = $post->post_content;
+?>
 <div class="row kaffekunde">
 	<div class="col-md-6">
 		<h2><?=$title;?></h2>

@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'losercoffee' ); ?></a>
-
+		<a href="willkommen"><div class="navLogo"></div></a>
 <div class="non-semantic-protector">
 	<div class="ribbon">
 		<div class="ribbon-fold">
@@ -31,7 +31,7 @@
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'losercoffee' ); ?></button>
 					<ul>
 						<li><a href="ueber-uns">über uns</a></li>
-						<li><a href="roesterei">die rösterei</a></li>
+						<li><a href="die-roesterei">die rösterei</a></li>
 						<li><a href="shop">shop</a></li>
 						<li class="logoSpacer"></li>
 						<li><a href="wissensdurst">wissensdurst</a></li>
@@ -43,7 +43,6 @@
 							[$amount]
 						</li>
 					</ul>
-				<a href="willkommen"><div class="navLogo"></div></a>
 			</nav>
 		</div>
 	</div>

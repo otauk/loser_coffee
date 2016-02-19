@@ -134,6 +134,7 @@ body {
 	font-size: @fs-base;
 	color: @color-font_base;
 	margin: 0;
+	margin-top:45px;
 	overflow-x: hidden;
 	line-height: @line-height-base;
 	background: #efefef;
@@ -356,6 +357,7 @@ h2 {
 	background: url("img/exports/bg_pattern.jpg") repeat-x;
 	border-bottom: 8px solid  @color-head_braun;
 	padding-bottom: 30px;
+	padding-top: 100px;
 	text-align: center;
 	// Seitenbreite
 	margin: 0 auto;
@@ -431,7 +433,15 @@ h2 {
 	}
 }
 
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	display: none;
+}
 
+/*
+* #################
+* ##### FOOTER #####
+* #################
+*/
 
 
 .footerLogo {
@@ -538,13 +548,12 @@ h2 {
 }
 
 .navLogo {
-	background: url("img/logo.png") no-repeat;
+	background: url("img/exports/loser_coffee_big.png") no-repeat;
 	position: absolute;
 	z-index: 10000;
-	@logor: 80px;
-	width:@logor;
-	height:@logor;
-	left: (@wrapper/2) - @logor/2;
+	width:165px;
+	height:215px;
+	left:520px;
 	top:0px;
 }
 
@@ -558,7 +567,6 @@ h2 {
 
 	& img {
 		display: block;
-		max-height:350px;
 		max-width: 1110px;
 		width: auto;
 		height: auto;
