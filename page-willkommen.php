@@ -74,7 +74,7 @@ get_header(); ?>
 
 <?php
 	// kaffeekunde post
-$post = get_post( 44 );
+$post = get_page_by_title('Kleine Kaffeekunde', OBJECT, 'post');
 $title = $post->post_title;
 $content = $post->post_content;
 ?>

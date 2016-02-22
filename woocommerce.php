@@ -11,26 +11,27 @@
  */
 
 get_header(); ?>
-
-
 <div class="row zubereitung">
 	<div class="col-md-12">
 			<h1>Bevorzugte Zubereitungsart</h1>
 			<ul>
 				<li>
-					<a class="filterkaffee" href="http://localhost:8888/loser_coffee/produkt-kategorie/filterkaffee/"></a>
+					<a class="vollautomat" href="/losercoffee/shop/"></a>
 				</li>
 				<li>
-					<a class=" herdkanne"></a>
+					<a class="filterkaffee" href="/losercoffee/produkt-kategorie/filter"></a>
 				</li>
 				<li>
-					<a class=" frenchpress"></a>
+					<a class=" herdkanne" href="/losercoffee/produkt-kategorie/herdkanne"></a>
 				</li>
 				<li>
-					<a class=" siebträger"></a>
+					<a class=" frenchpress" href="/losercoffee/produkt-kategorie/frenchpress"></a>
 				</li>
 				<li>
-					<a class=" vollautomat"></a>
+					<a class=" siebträger" href="/losercoffee/produkt-kategorie/siebtraeger"></a>
+				</li>
+				<li>
+					<a class=" vollautomat" href="/losercoffee/produkt-kategorie/vollautomat"></a>
 				</li>
 			</ul>
 	</div>

@@ -48,13 +48,17 @@
 					<h2>Mein<br/> Warenkorb</h2>
 					<div class="icon-warenkorb">
 					</div>
-					[$anzahl]
+					<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf (_n( '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> Artikel</a>
 					<hr/>
 					<div class="icon-geld">
 					</div>
-					[$amount]
+					<?php echo WC()->cart->get_cart_total(); ?>
 					<hr/>
-					<h2 class="white">>> Kasse</h2>
+					<h2 class="white">
+						<?php global $woocommerce; ?>
+						<a href="<?php echo $woocommerce->cart->get_checkout_url();?>">
+						>> Kasse
+						</a></h2>
 
 			</div>
 
@@ -64,5 +68,8 @@
 
 </div><!-- .wrapper -->
 </div>
+
+<?php wp_footer(); ?>
+
 </body>
 </html>
