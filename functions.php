@@ -143,20 +143,6 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-// disable woocommerce stylesheet
-/*
-	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-function wp_enqueue_woocommerce_style(){
-	wp_register_style( 'loser_coffee-woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
-
-	if ( class_exists( 'woocommerce' ) ) {
-		wp_enqueue_style( 'mytheme-woocommerce' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
-*/
-
 function clean_text () {
 	ob_start();
 		the_content();
@@ -182,4 +168,90 @@ function header_img() {
         'header-image'
     );
 	endif;
+}
+
+// Übersetzungen
+add_filter('gettext', 'translate_text');
+add_filter('ngettext', 'translate_text');
+
+function translate_text($translated) {
+$translated = str_ireplace('In den Warenkorb', 'Warenkorb', $translated);
+$translated = str_ireplace('Ausführung wählen', 'Varianten', $translated);
+$translated = str_ireplace('Ähnliche Produkte', 'Andere Kunden kauften auch', $translated);
+return $translated;
+}
+
+// Hide Tabs
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
+
+}
+
+// Custom Tabs Product View
+add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
+function woo_new_product_tab( $tabs ) {
+
+	// Adds the new tab
+
+	$tabs['test_tab'] = array(
+		'title' 	=> __( 'Produktbeschreibung', 'woocommerce' ),
+		'priority' 	=> 50,
+		'callback' 	=> 'woo_new_product_tab_content'
+	);
+
+	return $tabs;
+
+}
+function woo_new_product_tab_content() {
+
+	// The new tab content
+	global $post;
+	global $product;
+	$desc = $post->post_content;
+	$cat = $product->get_categories();
+	if (strpos($cat, "filterkaffee") !== false) {
+		$catOut .=  "<span class='icon-filterkaffee' title='Filter'></span>";
+	}
+	if (strpos($cat, "herdkanne") !== false) {
+		$catOut .=  "<span class='icon-espressokocher' title='Herdkanne'></span>";
+		}
+	if (strpos($cat, "frenchpress") !== false) {
+		$catOut .=  "<span class='icon-frenchpress' title='Frenchpress'></span>";
+		}
+	if (strpos($cat, "siebtraeger") !== false) {
+		$catOut .=  "<span class='icon-siebtraeger' title='Siebträger'></span>";
+		}
+	if (strpos($cat, "vollautomat") !== false) {
+		$catOut .=  "<span class='icon-vollautomat' title='Vollautomat'></span>";
+		}
+
+	echo '
+		<row class="col-md-6">
+			<h2>Produktbeschreibung</h2>
+			<p>
+				'.$desc.'
+			</p>
+		</row>
+		<row class="col-md-6">
+			<h2>Besonders geeignet für</h2>
+			<p class="icons">
+				'.$catOut.'
+			</p>
+			<p class="socialMedia">
+				<a href=""><span class="icon-facebook" title="Facebook"></span></a>
+				<a href=""><span class="icon-facebook" title="Facebook"></span></a>
+				<a href=""><span class="icon-facebook" title="Facebook"></span></a>
+				<a href=""><span class="icon-facebook" title="Facebook"></span></a>
+			</p>
+		</row>
+
+	';
+
 }

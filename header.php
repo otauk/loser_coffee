@@ -29,12 +29,12 @@
 			<nav id="site-navigation" class="mainNavigation" role="navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'losercoffee' ); ?></button>
 					<ul>
-						<li><a href="<?php echo esc_url( get_permalink(7));?>">über uns</a></li>
-						<li><a href="<?php echo esc_url( get_permalink(22));?>">die rösterei</a></li>
-						<li><a href="<?php echo esc_url( get_permalink(24));?>">shop</a></li>
+						<li><a href="<?php echo esc_url( get_permalink(6));?>">über uns</a></li>
+						<li><a href="<?php echo esc_url( get_permalink(40));?>">die rösterei</a></li>
+						<li><a href="<?php echo esc_url( get_permalink(12));?>">shop</a></li>
 						<li class="logoSpacer"></li>
-						<li><a href="<?php echo esc_url( get_permalink(26));?>">wissensdurst</a></li>
-						<li><a href="<?php echo esc_url( get_permalink(28));?>">kontakt</a></li>
+						<li><a href="<?php echo esc_url( get_permalink(30));?>">wissensdurst</a></li>
+						<li><a href="<?php echo esc_url( get_permalink(37));?>">kontakt</a></li>
 						<li class="checkout">
 							<span class="icon-warenkorb"></span>
 							<span class="">

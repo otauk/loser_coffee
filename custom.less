@@ -345,9 +345,6 @@ h2 {
 	}
 }
 
-.kontakt {
-}
-
 /*
 * ###############
 * ##### SHOP #####
@@ -546,8 +543,56 @@ h2 {
 
 .woocommerce div.product {
 
+	& .product_title  {
+		font-family: "geared";
+		letter-spacing: 1px;
+		color: @color-head_braun;
+	}
+
+	& .woocommerce-tabs .panel {
+		background: url("img/exports/bg_pattern.jpg") repeat-x;
+		margin: 15px -45px;
+		padding: 30px 45px 15px 45px;
+		border: none;
+		border-bottom: 8px solid @color-head_braun;
+		border-radius: 0;
+
+		& h2 {
+			font-family: "lavanderia";
+			text-transform: none;
+			font-size: @fs-base*2;
+			padding-bottom: 15px;
+		}
+
+		& .icons {
+			padding: 30px 0;
+		}
+
+		& [class^="icon-"] {
+			font-size: @fs-base*5;
+			color:@color-navgruen;
+			padding-right: 30px;
+		}
+
+		& .socialMedia {
+			padding: 15px 0;
+
+			& [class^="icon-"] {
+			font-size: @fs-base*2;
+			color:@color-head_braun;
+			padding-right: 30px;
+		}
+
+		}
+
+	}
+
+	& .related.products {
+		margin-top: 45px;
+	}
+
 	& div.images {
-		margin:0;
+		margin-bottom: 30px;;
 	}
 
 	& div.woocommerce-tabs .wc-tabs-wrapper {
