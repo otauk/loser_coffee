@@ -178,6 +178,7 @@ function translate_text($translated) {
 $translated = str_ireplace('In den Warenkorb', 'Warenkorb', $translated);
 $translated = str_ireplace('Ausführung wählen', 'Varianten', $translated);
 $translated = str_ireplace('Ähnliche Produkte', 'Andere Kunden kauften auch', $translated);
+$translated = str_ireplace('Wähle eine Ausführung', 'Mahlgrad', $translated);
 return $translated;
 }
 
@@ -216,6 +217,7 @@ function woo_new_product_tab_content() {
 	global $product;
 	$desc = $post->post_content;
 	$cat = $product->get_categories();
+	var_dump($cat);
 	if (strpos($cat, "filterkaffee") !== false) {
 		$catOut .=  "<span class='icon-filterkaffee' title='Filter'></span>";
 	}
@@ -255,3 +257,41 @@ function woo_new_product_tab_content() {
 	';
 
 }
+
+// Mindespreis anzeigen in Übersicht
+add_filter('woocommerce_variable_price_html', 'custom_variation_price', 10, 2);
+function custom_variation_price( $price, $product ) {
+$price = '';
+if ( !$product->min_variation_price || $product->min_variation_price !== $product->max_variation_price ) $price .= '<span class="from">' . _x('', 'min_price', 'woocommerce') . ' </span>';
+$price .= woocommerce_price($product->min_variation_price);
+return $price;
+}
+
+
+// Preis ausgeben
+/*
+function woocommerce_template_single_price(){
+
+	$wc_price = apply_filters( 'woocommerce_variation_price_html', $wc_price, $instance );
+
+	var_dump($wc_price);
+
+
+
+
+
+	global $product;
+	//$pricetag  = woocommerce_get_variation_price_html();//$product->price;
+  echo '
+  	<div class="singleProductPrice">
+  		'.$pricetag.' €
+  		  <a href="http://localhost:8888/loser_coffee/cart/?add-to-cart=%id_product%&variation_id=%id_varia‌​tion%&attribute_pa_%name_attribute%=%attribute_slug_value%">
+  	<div class="singleProductPriceCart">
+	  		<span class="icon-warenkorb"></span>
+	  	</div>
+	  	</a>
+  	</div>
+
+  ';
+}
+*/
