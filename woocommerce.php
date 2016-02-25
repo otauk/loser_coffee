@@ -10,29 +10,23 @@
  * @package losercoffee
  */
 
-get_header(); ?>
+get_header();
+?>
 <div class="row zubereitung">
 	<div class="col-md-12">
 			<h1>Bevorzugte Zubereitungsart</h1>
 			<ul>
-				<li>
-					<a class="vollautomat" href="/loser_coffee/shop/"></a>
-				</li>
-				<li>
-					<a class="filterkaffee" href="/loser_coffee/produkt-kategorie/filter/"></a>
-				</li>
-				<li>
-					<a class=" herdkanne" href="/loser_coffee/produkt-kategorie/herdkanne/"></a>
-				</li>
-				<li>
-					<a class=" frenchpress" href="/loser_coffee/produkt-kategorie/frenchpress"></a>
-				</li>
-				<li>
-					<a class=" siebträger" href="/loser_coffee/produkt-kategorie/siebtraeger"></a>
-				</li>
-				<li>
-					<a class=" vollautomat" href="/loser_coffee/produkt-kategorie/vollautomat"></a>
-				</li>
+				<?php
+					$sortBy = array("alle", "filter", "herdkanne", "frenchpress", "siebtraeger", "vollautomat");
+					foreach ($sortBy as $sortAs) {
+						// Zeige Alle
+						if ($sortAs == $sortBy[0]) {
+							echo "<li><a class='$sortAs' href='".home_url('/shop/')."'></a></li>";
+						}
+						// Filter anwenden
+						else echo "<li><a class='$sortAs' href='".home_url('/produkt-kategorie/'.$sortAs.'')."'></a></li>";
+					}
+					?>
 			</ul>
 	</div>
 </div>

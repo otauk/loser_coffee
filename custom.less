@@ -388,8 +388,15 @@ h2 {
 		color: @color-navgruen;
 	}
 
+	& .alle {
+		font-family: 'losericons';								// = = = = = = = = = = =
+		font-size: @fs-base*5;									// HIER FEHLT DAS ICON
+		&::before {content: "\e905";}							// = = = = = = = = = = =
+		&:hover:before {content: "\e900";}
+	}
 
-	& .filterkaffee {
+
+	& .filter {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
@@ -414,7 +421,7 @@ h2 {
 		&:hover:before {content: "\e902";}
 	}
 
-	& .siebträger {
+	& .siebtraeger {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
@@ -573,7 +580,7 @@ h2 {
 		font-size: @fs-base*1.5;
 		position: absolute;
 	left:52%;
-	top:150px;
+	top:160px;
 
 		& .qty {
 			width: 250px !important;
@@ -694,7 +701,11 @@ h2 {
 	}
 }
 
-
+.woocommerce ul.products li.product .price {
+	height:inherit!important;
+	font-size: @fs-base*1.5 !important;
+	width: 100%;
+}
 
 .singleProductPrice {
 	background: @color-navgruen;

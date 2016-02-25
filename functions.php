@@ -266,32 +266,3 @@ if ( !$product->min_variation_price || $product->min_variation_price !== $produc
 $price .= woocommerce_price($product->min_variation_price);
 return $price;
 }
-
-
-// Preis ausgeben
-/*
-function woocommerce_template_single_price(){
-
-	$wc_price = apply_filters( 'woocommerce_variation_price_html', $wc_price, $instance );
-
-	var_dump($wc_price);
-
-
-
-
-
-	global $product;
-	//$pricetag  = woocommerce_get_variation_price_html();//$product->price;
-  echo '
-  	<div class="singleProductPrice">
-  		'.$pricetag.' €
-  		  <a href="http://localhost:8888/loser_coffee/cart/?add-to-cart=%id_product%&variation_id=%id_varia‌​tion%&attribute_pa_%name_attribute%=%attribute_slug_value%">
-  	<div class="singleProductPriceCart">
-	  		<span class="icon-warenkorb"></span>
-	  	</div>
-	  	</a>
-  	</div>
-
-  ';
-}
-*/
