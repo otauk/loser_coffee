@@ -14,19 +14,19 @@
 	<div class="row footer">
 		<div class="col-md-2 footerBorder noshow">
 			<h2>Allgemein</h2>
-			<a href="#">Über uns</a><br/>
-			<a href="#">Röstmaschine</a><br/>
-			<a href="#">Wissensdurst</a><br/>
-			<a href="#">Kontakt</a><br/>
-			<a href="#">Impressum</a><br/>
-			<a href="#">Datenschutz</a><br/>
+			<a href="<?php echo home_url('/ueber-uns/');?>">Über uns</a><br/>
+			<a href="<?php echo home_url('/die-roesterei/');?>">Die Rösterei</a><br/>
+			<a href="<?php echo home_url('/wissensdurst/');?>">Wissensdurst</a><br/>
+			<a href="<?php echo home_url('/kontakt/');?>">Kontakt</a><br/>
+			<a href="<?php echo home_url('/impressum/');?>">Impressum</a><br/>
+			<a href="<?php echo home_url('/datenschutzbelehrung/');?>">Datenschutz</a><br/>
 		</div>
 		<div class="col-md-2 footerBorder noshow">
 			<h2>Shop</h2>
-			<a href="#">Produkte</a><br/>
-			<a href="#">Versandkosten</a><br/>
-			<a href="#">Bezahlarten</a><br/>
-			<a href="#">AGB</a><br/>
+			<a href="<?php echo home_url('/shop/');?>">Produkte</a><br/>
+			<a href="<?php echo home_url('/versandarten/');?>">Versand</a><br/>
+			<a href="<?php echo home_url('/zahlungsarten/');?>">Zahlungsarten</a><br/>
+			<a href="<?php echo home_url('/agb/');?>">AGB</a><br/>
 		</div>
 		<div class="col-md-2 col-xs-3">
 			<h2>Kontakt</h2>

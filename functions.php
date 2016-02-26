@@ -217,12 +217,11 @@ function woo_new_product_tab_content() {
 	global $product;
 	$desc = $post->post_content;
 	$cat = $product->get_categories();
-	var_dump($cat);
-	if (strpos($cat, "filterkaffee") !== false) {
-		$catOut .=  "<span class='icon-filterkaffee' title='Filter'></span>";
+	if (strpos($cat, "filter") !== false) {
+		$catOut .=  "<span class='icon-filter' title='Filter'></span>";
 	}
 	if (strpos($cat, "herdkanne") !== false) {
-		$catOut .=  "<span class='icon-espressokocher' title='Herdkanne'></span>";
+		$catOut .=  "<span class='icon-herdkanne' title='Herdkanne'></span>";
 		}
 	if (strpos($cat, "frenchpress") !== false) {
 		$catOut .=  "<span class='icon-frenchpress' title='Frenchpress'></span>";
@@ -266,3 +265,10 @@ if ( !$product->min_variation_price || $product->min_variation_price !== $produc
 $price .= woocommerce_price($product->min_variation_price);
 return $price;
 }
+
+// Button anordung ändern
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 60 );

@@ -24,10 +24,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-flterkaffee_hover:before {
+.icon-flter_hover:before {
     content: "\e900";
 }
-.icon-espressokocher_hover:before {
+.icon-herdkanne_hover:before {
     content: "\e901";
 }
 .icon-frenchpress_hover:before {
@@ -39,10 +39,10 @@
 .icon-vollautomat_hover:before {
     content: "\e904";
 }
-.icon-filterkaffee:before {
+.icon-filter:before {
     content: "\e905";
 }
-.icon-espressokocher:before {
+.icon-herdkanne:before {
     content: "\e906";
 }
 .icon-frenchpress:before {

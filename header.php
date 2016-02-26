@@ -17,6 +17,7 @@
 <?php wp_head(); ?>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/custom.css">
 </head>
 
@@ -31,11 +32,13 @@
 					<ul>
 						<li><a href="<?php echo home_url('/ueber-uns/');?>">über uns</a></li>
 						<li><a href="<?php echo home_url('/die-roesterei/');?>">die rösterei</a></li>
-						<li><a href="<?php echo home_url('/shop/');?>">shop</a></li>
-						<li class="logoSpacer"></li>
-						<li><a href="<?php echo home_url('/wissensdurst/');?>">wissensdurst</a></li>
+						<li ><a href="<?php echo home_url('/shop/');?>">shop</a></li>
+						<li class="logoSpacer"><a href="<?php echo home_url('/wissensdurst/');?>">wissensdurst</a></li>
 						<li><a href="<?php echo home_url('/kontakt/');?>">kontakt</a></li>
-						<li class="checkout">
+					</ul>
+
+						<div class="checkout">
+							<a href="<?php echo home_url('/my-account/');?>"><i class="fa fa-user faicon-login"></i>LOGIN</a>
 							<span class="icon-warenkorb"></span>
 							<span class="">
 								<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
@@ -45,8 +48,8 @@
 							</span>
 							<span class="icon-geld"></span>
 							<?php echo WC()->cart->get_cart_total(); ?>
-						</li>
-					</ul>
+						</div>
+
 			</nav>
 		</div>
 	</div>
