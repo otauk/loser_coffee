@@ -22,7 +22,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
-@import url("iconstyle.css");
+@import url("icons.css");
 
 @font-face {
     font-family: 'geared';
@@ -71,16 +71,16 @@
 	}
 // pt-Wert eintragen
 @ptpx:				0.75px;
-@fs-base:			15 * @ptpx;
+@fs-base:			13px;
 @fs-large:         	ceil((@fs-base * 1.25)); //
 @fs-small:         	ceil((@fs-base * 0.85)); //
-@fs-h1:				50 * @ptpx;
-@fs-h2:				20 * @ptpx;
+@fs-h1:				40px;
+@fs-h2:				20px;
 @fs-button:			29px;
 @fs-footer-h2:	26px;
 @fs-footer-text:	16px;
 
-@line-height-base:	24px;
+@line-height-base:	22px;
 
 /*
 *	=============================================
@@ -134,11 +134,12 @@ body {
 	font-size: @fs-base;
 	color: @color-font_base;
 	margin: 0;
-	margin-top:45px;
+	margin-top:83px;
 	overflow-x: hidden;
 	line-height: @line-height-base;
 	background: #efefef;
 	font-family: 'Source Sans Pro', sans-serif;
+	background:url("img/bg_pattern.jpg") !important;
 }
 
 .wrapper {
@@ -208,6 +209,7 @@ h1 {
 	color:@color-headline;
 	line-height: @line-height-base;
 	font-family: "lavanderia";
+	font-weight: bold;
 	}
 
 h2 {
@@ -279,6 +281,8 @@ h2 {
 		&:hover {
 			& img {
 				border-bottom: 8px solid @color-head_braun;
+				filter: sepia(0);
+				-webkit-filter: sepia(0);
 			}
 		}
 	}
@@ -289,6 +293,8 @@ h2 {
 		height:167px;
 		background:  green;
 		border-bottom: 8px solid @color-footer_bg;
+		filter: sepia(0.7);
+		-webkit-filter: sepia(0.7);
 	}
 
 	& .text {
@@ -396,8 +402,8 @@ h2 {
 	& .alle {
 		font-family: 'losericons';								// = = = = = = = = = = =
 		font-size: @fs-base*5;									// HIER FEHLT DAS ICON
-		&::before {content: "\e905";}							// = = = = = = = = = = =
-		&:hover:before {content: "\e900";}
+		&::before {content: "\e916";}							// = = = = = = = = = = =
+		&:hover:before {content: "\e905";}
 	}
 
 
@@ -405,7 +411,7 @@ h2 {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
-		&::before {content: "\e905";}
+		&::before {content: "\e90f";}
 		&:hover:before {content: "\e900";}
 	}
 
@@ -414,7 +420,7 @@ h2 {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
-		&::before {content: "\e906";}
+		&::before {content: "\e910";}
 		&:hover:before {content: "\e901";}
 	}
 
@@ -422,7 +428,7 @@ h2 {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
-		&::before {content: "\e907";}
+		&::before {content: "\e911";}
 		&:hover:before {content: "\e902";}
 	}
 
@@ -430,7 +436,7 @@ h2 {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
-		&::before {content: "\e908";}
+		&::before {content: "\e912";}
 		&:hover:before {content: "\e903";}
 	}
 
@@ -438,7 +444,7 @@ h2 {
 		font-family: 'losericons';
 		font-size: @fs-base*5;
 
-		&::before {content: "\e909";}
+		&::before {content: "\e913";}
 		&:hover:before {content: "\e904";}
 	}
 }
@@ -466,6 +472,8 @@ h2 {
 		font-size: @fs-base*1.5;
 		letter-spacing: 1px;
 		position: relative;
+		// Ausgleich der mehrzeiigen Überschriften
+		height: 65px;
 
 		&:after {
 	background:	linear-gradient(-45deg, @color-footer_bg 10px, transparent 0),
@@ -563,28 +571,15 @@ h2 {
 		font-family: "geared";
 		letter-spacing: 1px;
 		color: @color-head_braun;
-		font-size: @fs-base*2;
+		font-size: @fs-base*2.5;
+		margin-bottom: @space-base*3;
 	}
 
-	/*
-		form.cart .variations select {
-		width: 250px !important;
-		min-width: 250px;
-		display: inline-block;
-		background: #86603b;
-		color: #fff;
-		font-size: 16.875px;
-		position: absolute;
-		left: 52%;
-		margin-top: -200px;
-	}
-	*/
-
-		form.cart .variations {
+	form.cart .variations {
 			border: 0;
 			width: 250px;
-			background: #86603b;
-			color: #fff;
+			background: @color-footer_bg;
+			margin-bottom: 0;
 		}
 
 	form.cart .variations td {
@@ -594,61 +589,27 @@ h2 {
 	form.cart div.quantity {
 		color: #fff;
 		font-size: @fs-base*1.5;
+		width: 256px;
+		background: @color-footer_bg;
+
+		& .qLabel {
+			font-size: 14px;
+			font-weight: 700;
+			padding-left: 15px
+		}
 
 		& .qty {
-			width: 250px !important;
-			background: @color-head_braun;
+			background: @color-footer_bg;
 			text-align: left;
-			padding-left: 10px;
+			padding: 10px 15px;
+			border:none;
+			margin-left: 15px;
 		}
 	}
 
 	p.stock {
 		font-size: @fs-base;
 	}
-
-
-
-	/*	form.cart .button {
-		font-family: "geared";
-		font-size: @fs-base*4;
-		color: #fff;
-		width:200px;
-		background: @color-buttongruen;
-		height:50px;
-		font-size: @fs-base*1.5;
-		padding:2px 10px 0px 10px;
-		//margin-top:-87px;
-		//position: absolute;
-		right:0;
-		text-align: right;
-
-		&:hover {
-			color: @color-head_braun;
-		}
-		&:disabled {
-			background: @color-buttongruen;
-
-			&:hover {
-				background: @color-buttongruen;
-			}
-		}
-
-		&:after {
-			background:	linear-gradient(-45deg, @color-buttongruen 10px, transparent 0),
-			 					linear-gradient(45deg, @color-buttongruen 10px, transparent 0);
-			background-position: left center;
-			background-repeat: repeat-x;
-			background-size: 10px 13px;
-			content: " ";
-			display: block;
-			position: absolute;
-			top: -5px;
-			left: 0;
-			width: 100%;
-			height: 15px
-		}
-	}*/
 
 	& .woocommerce-tabs .panel {
 		background: url("img/exports/bg_pattern.jpg") repeat-x;
@@ -701,19 +662,93 @@ h2 {
 	}
 
 	.price, .variation_modified {
-		background: @color-navgruen;
-		width: 200px;
-		float: right;
-		height: 200px;
-		padding-top:110px;
-		padding-right:20px;
-		font-family: "geared";
-		font-size: @fs-base*4 !important;
-		color: #fff !important;
-		text-align: right;
-		margin-top: 30px;
+	background: @color-navgruen;
+	width: 200px;
+	float: right;
+	height: 145px;
+	padding-top: 35px;
+	font-family: "geared";
+	font-size: 52px !important;
+	color: #fff !important;
+	text-align: center
+
 	}
 }
+
+.entry-summary {
+	margin: 0;
+}
+.woocommerce a.button.alt, .woocommerce input.button.alt {
+width: 200px;
+	background: @color-buttongruen;
+	box-shadow: none;
+
+	&:hover {
+		background:@color-buttongruen;
+		color: @color-footer_bg;
+		}
+}
+.woocommerce button.button.alt  {
+	margin-top: -10px;
+	position: absolute;
+	right: 0;
+	width: 200px;
+	background: @color-buttongruen;
+	box-shadow: none;
+
+	&:hover {
+		background:@color-buttongruen;
+		color: @color-footer_bg;
+
+		&:after {
+			background:	linear-gradient(-45deg, @color-buttongruen 10px, transparent 0),
+			 					linear-gradient(45deg, @color-buttongruen 10px, transparent 0);
+			background-position: left center;
+			background-repeat: repeat-x;
+			background-size: 10px 13px;
+			content: " ";
+			display: block;
+			position: absolute;
+			top: -5px;
+			left: 0;
+			width: 100%;
+			height: 15px;
+			}
+
+	}
+
+	&:after {
+			background:	linear-gradient(-45deg, @color-buttongruen 10px, transparent 0),
+			 					linear-gradient(45deg, @color-buttongruen 10px, transparent 0);
+			background-position: left center;
+			background-repeat: repeat-x;
+			background-size: 10px 13px;
+			content: " ";
+			display: block;
+			position: absolute;
+			top: -5px;
+			left: 0;
+			width: 100%;
+			height: 15px;
+			}
+}
+
+.cartButton {
+	font-size: 3em;
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.cartDesc {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 15px;
+}
+
+.label{
+	font-size:1em;
+	padding:0 15px !important
+	}
 
 .woocommerce ul.products li.product .price {
 	height:inherit!important;
@@ -726,7 +761,7 @@ h2 {
 	width: 200px;
 	float: right;
 	height: 200px;
-	padding-top:110px;
+	padding-top:65px;
 	padding-right:20px;
 	font-family: "geared";
 	font-size: @fs-base*4;
@@ -802,13 +837,14 @@ border-top-color: @color-head_braun;
 	& h2 {
 	color: #333;
 	padding:5px;
+	font-size:14px;
 
 		&.white {
 			color: white;
 		}
 	}
 
-	& .icon-warenkorb:before, .icon-geld:before {
+	& .icon-warenkorb:before, .icon-geld:before, icon-user:before {
 		color: #333;
 		font-size: @fs-base*1.5;
 	}
@@ -844,6 +880,7 @@ border-top-color: @color-head_braun;
 	& li {
 		display: inline-block;
 		padding: @space-base 30px;
+		margin-right: -5px;
 
 		& a {
 
@@ -866,6 +903,11 @@ border-top-color: @color-head_braun;
 		color: #333;
 	}
 
+	&	.icon-user:before {
+		color: #333;
+			padding-right:5px;
+		}
+
 	& .faicon-login {
 		color: #333;
 		font-size: @fs-base*1.5;
@@ -874,10 +916,10 @@ border-top-color: @color-head_braun;
 
 }
 
-.checkout {
+.checkout_block {
 	position: absolute;
 	right: 0;
-	margin-top: -54px;
+	margin-top: -52px;
 	padding-right: 10px;
 	padding: 15px;
 	background: @color-buttongruen;
@@ -986,3 +1028,7 @@ border-top-color: @color-head_braun;
 }
 
 .non-semantic-protector { position: relative; z-index: 1; }
+
+.checkbox input[type=checkbox] {
+	position: relative !important;
+}

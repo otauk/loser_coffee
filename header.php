@@ -37,12 +37,20 @@
 						<li><a href="<?php echo home_url('/kontakt/');?>">kontakt</a></li>
 					</ul>
 
-						<div class="checkout">
-							<a href="<?php echo home_url('/my-account/');?>"><i class="fa fa-user faicon-login"></i>LOGIN</a>
+						<div class="checkout_block">
+							<?php
+								if ( is_user_logged_in() ) { ?>
+								<a href="<?php echo home_url('/my-account/');?>"><span class="icon-user"></span>KONTO</a>
+								<?php
+								}
+								else { ?>
+								<a href="<?php echo home_url('/my-account/');?>"><span class="icon-user"></span>LOGIN</a>
+								<?php }
+								?>
 							<span class="icon-warenkorb"></span>
 							<span class="">
 								<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
-									<?php echo sprintf (_n( '%d',WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+									<?php echo sprintf (_n( '%d',WC()->cart->get_cart_contents_count(),'' ), WC()->cart->get_cart_contents_count() ); ?>
 
 								</a>
 							</span>
@@ -56,5 +64,5 @@
 </div>
 
 <div class="wrapper">
-	<a href="willkommen"><div class="navLogo"></div></a>
+	<a href="<?php echo home_url('/willkommen/');?>"><div class="navLogo"></div></a>
 	<div id="content" class="content">

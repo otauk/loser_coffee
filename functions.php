@@ -178,7 +178,6 @@ function translate_text($translated) {
 $translated = str_ireplace('In den Warenkorb', 'Warenkorb', $translated);
 $translated = str_ireplace('Ausführung wählen', 'Varianten', $translated);
 $translated = str_ireplace('Ähnliche Produkte', 'Andere Kunden kauften auch', $translated);
-$translated = str_ireplace('Wähle eine Ausführung', 'Mahlgrad', $translated);
 return $translated;
 }
 

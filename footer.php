@@ -48,7 +48,7 @@
 					<h2>Mein<br/> Warenkorb</h2>
 					<div class="icon-warenkorb">
 					</div>
-					<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf (_n( '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> Artikel</a>
+					<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf (_n( '%d', WC()->cart->get_cart_contents_count(), '' ), WC()->cart->get_cart_contents_count() ); ?> Artikel</a>
 					<hr/>
 					<div class="icon-geld">
 					</div>

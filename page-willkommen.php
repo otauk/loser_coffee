@@ -40,9 +40,9 @@ get_header(); ?>
 		<h2>Unser Sortiment</h2>
 	</div>
 		<div class="col-md-4">
-			<a href="" class="imglink">
+			<a href="<?php echo home_url('/produkt-kategorie/coffee');?>" class="imglink">
 				<div class="frame">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/kaffeebohnen_frisch.jpg" />
+					<img src="<?php echo get_template_directory_uri(); ?>/img/kaffee_onlineshop.jpg" />
 					<div class="text">
 						<span class="handmade">Handmade</span><span class="category">Coffee</span><span class="arrows"></span>
 					</div>
@@ -50,9 +50,9 @@ get_header(); ?>
 			</a>
 		</div>
 		<div class="col-md-4">
-			<a href="" class="imglink">
+			<a href="<?php echo home_url('/produkt-kategorie/espresso');?>" class="imglink">
 				<div class="frame">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/kaffeebohnen_frisch.jpg" />
+					<img src="<?php echo get_template_directory_uri(); ?>/img/espresso.jpg" />
 					<div class="text">
 						<span class="handmade">Handmade</span><span class="category">Espresso</span><span class="arrows"></span>
 					</div>
@@ -60,9 +60,9 @@ get_header(); ?>
 
 		</div>
 		<div class="col-md-4">
-			<a href="" class="imglink">
+			<a href="<?php echo home_url('/produkt-kategorie/probierpakete');?>" class="imglink">
 				<div class="frame">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/kaffeebohnen_frisch.jpg" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/probierpaket.jpg" />
 					<div class="text">
 						<span class="category">Probierpakete</span><span class="arrows"></span>
 					</div>
@@ -84,25 +84,22 @@ $content = $post->post_content;
 		<p>
 			<?=$content;?>
 		</p>
-		<p>
-			<a class="forward" href="">weiterlesen </a>
-		</p>
 	</div>
 	<div class="col-md-2">
 		<div class="frame">
-				<img src="" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/espressobar_paderborn.jpg" />
 			</div>
 
 	</div>
 	<div class="col-md-2">
 		<div class="frame">
-				<img src="" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/exclusive_kaffee_paderborn.jpg" />
 			</div>
 
 	</div>
 	<div class="col-md-2">
 		<div class="frame">
-				<img src="" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/kaffebohnen_gemahlen.jpg" />
 			</div>
 
 	</div>

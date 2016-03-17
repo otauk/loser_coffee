@@ -5,6 +5,9 @@
  */
 
 get_header(); ?>
+<div  class="headerImg">
+	<?=header_img();?>
+</div>
 	<div class="row kontakt">
 		<div class="col-md-6">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
