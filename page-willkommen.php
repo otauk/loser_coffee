@@ -17,7 +17,7 @@ get_header(); ?>
 <div  class="headerImg">
 	<?=header_img();?>
 </div>
-<div class="row">
+<div class="row willkommen">
 	<div class="col-md-12">
 				<h1><?php the_title() ;?></h1>
 			<div class="zweispaltig">
@@ -84,6 +84,9 @@ $content = $post->post_content;
 		<p>
 			<?=$content;?>
 		</p>
+		<p>
+ 			<a class="forward" href="wissensdurst">weiterlesen </a>
+ 		</p>
 	</div>
 	<div class="col-md-2">
 		<div class="frame">

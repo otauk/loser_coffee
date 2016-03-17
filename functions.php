@@ -178,6 +178,8 @@ function translate_text($translated) {
 $translated = str_ireplace('In den Warenkorb', 'Warenkorb', $translated);
 $translated = str_ireplace('Ausführung wählen', 'Varianten', $translated);
 $translated = str_ireplace('Ähnliche Produkte', 'Andere Kunden kauften auch', $translated);
+// Workaround, da Versandkosten nicht korrekt dargestellt werden
+$translated = str_ireplace('Zahlungsgebühr', 'Versandkosten', $translated);
 return $translated;
 }
 
@@ -268,6 +270,6 @@ return $price;
 // Button anordung ändern
 remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
 
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 60 );
+

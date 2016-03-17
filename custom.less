@@ -76,8 +76,9 @@
 @fs-small:         	ceil((@fs-base * 0.85)); //
 @fs-h1:				40px;
 @fs-h2:				20px;
+@fs-h3:				18px;
 @fs-button:			29px;
-@fs-footer-h2:	26px;
+@fs-footer-h2:		26px;
 @fs-footer-text:	16px;
 
 @line-height-base:	22px;
@@ -90,9 +91,9 @@
 
 // Grid components
 @wrapper:	1110px;
-@breakpoint-small:  768px;
-@breakpoint-medium: 992px;
-@breakpoint-large:  1110px;
+@breakpoint-phone:  768px;
+@breakpoint-tablet: 992px;
+@breakpoint-desktop:  1110px;
 
 @space-base: 		15px;
 @space-large: 		ceil((@space-base * 2.0));
@@ -143,7 +144,7 @@ body {
 }
 
 .wrapper {
-	width:@wrapper;
+	max-width:@wrapper;
 	margin: 0 auto;
 	height: auto;
 }
@@ -222,6 +223,16 @@ h2 {
 	letter-spacing: 1px;
 	}
 
+h3 {
+	font-size:@fs-h3;
+	color:@color-head_braun;
+	margin:0;
+	font-family: "geared";
+	text-transform: uppercase;
+	padding:30px 0 15px;
+	letter-spacing: 1px;
+	}
+
 .footer h2 {
 	font-size: @fs-h2;
 	color: @color-head_braun;
@@ -274,7 +285,7 @@ h2 {
 	}
 
 	& .frame {
-		height:225px;
+
 		background:@color-navgruen;
 		border:4px solid white;
 
@@ -330,7 +341,6 @@ h2 {
 	padding-bottom: 60px;
 
 	& .frame {
-		height:225px;
 		border: 4px solid @color-buttongruen;
 		background: @color-headline;
 	}
@@ -400,9 +410,9 @@ h2 {
 	}
 
 	& .alle {
-		font-family: 'losericons';								// = = = = = = = = = = =
-		font-size: @fs-base*5;									// HIER FEHLT DAS ICON
-		&::before {content: "\e916";}							// = = = = = = = = = = =
+		font-family: 'losericons';
+		font-size: @fs-base*5;
+		&::before {content: "\e916";}
 		&:hover:before {content: "\e905";}
 	}
 
@@ -575,6 +585,10 @@ h2 {
 		margin-bottom: @space-base*3;
 	}
 
+	form.variations_form.cart {
+		width:250px;
+	}
+
 	form.cart .variations {
 			border: 0;
 			width: 250px;
@@ -586,26 +600,34 @@ h2 {
 		line-height: 3.5em;
 	}
 
+	form.cart .variations select {
+		margin: 0;
+	}
+
 	form.cart div.quantity {
 		color: #fff;
 		font-size: @fs-base*1.5;
-		width: 256px;
 		background: @color-footer_bg;
+		margin:0;
+		float: none;
+		padding: 10px 15px;
 
 		& .qLabel {
-			font-size: 14px;
+			font-size: 13px;
 			font-weight: 700;
-			padding-left: 15px
 		}
 
 		& .qty {
 			background: @color-footer_bg;
 			text-align: left;
-			padding: 10px 15px;
 			border:none;
-			margin-left: 15px;
+			margin-left: 35px;
 		}
 	}
+
+
+
+
 
 	p.stock {
 		font-size: @fs-base;
@@ -676,20 +698,21 @@ h2 {
 }
 
 .entry-summary {
-	margin: 0;
+	margin-top: 5px;
 }
 .woocommerce a.button.alt, .woocommerce input.button.alt {
-width: 200px;
+	width: 200px;
 	background: @color-buttongruen;
 	box-shadow: none;
+	padding:1.5em;
 
 	&:hover {
 		background:@color-buttongruen;
-		color: @color-footer_bg;
+		color: @color-footer_bg !important;
 		}
 }
 .woocommerce button.button.alt  {
-	margin-top: -10px;
+	margin-top: -55px;
 	position: absolute;
 	right: 0;
 	width: 200px;
@@ -698,7 +721,7 @@ width: 200px;
 
 	&:hover {
 		background:@color-buttongruen;
-		color: @color-footer_bg;
+		color: @color-footer_bg !important;
 
 		&:after {
 			background:	linear-gradient(-45deg, @color-buttongruen 10px, transparent 0),
@@ -732,6 +755,27 @@ width: 200px;
 			height: 15px;
 			}
 }
+
+.woocommerce input.button, a.button.wc-forward {
+	background: @color-footer_bg;
+	color: #fff;
+	&:hover {
+		background: @color-head_braun;
+		box-shadow: none;
+		color:#fff !important;
+	}
+}
+
+.woocommerce a.remove {
+	color: #b81c23 !important;
+	font-weight: normal !important;
+	border-radius: 0 !important;
+
+	&:hover {
+		background: #b81c23 !important;
+	}
+}
+
 
 .cartButton {
 	font-size: 3em;
@@ -795,6 +839,9 @@ border-top-color: @color-head_braun;
 }
 }
 
+.woocommerce table.shop_table tr.order-total {
+	background: @color-navgruen;
+}
 
 
 /*
@@ -1003,9 +1050,6 @@ border-top-color: @color-head_braun;
 .headerImg {
 
 	& img {
-		display: block;
-		max-width: 1110px;
-		width: auto;
 		height: auto;
 		border-bottom: 10px solid @color-head_braun;
 	}
@@ -1020,15 +1064,56 @@ border-top-color: @color-head_braun;
 */
 
 
-@media screen and (max-width: @breakpoint-small) {
+@media screen and (max-width: @breakpoint-phone) {
 
 	.noshow {
 		display: none;
 	}
+
+	body {
+		margin: 0;
+	}
+
+	wrapper {
+		width:100%;
+	}
+
+	.non-semantic-protector {
+		display: none;
+	}
+
+	.navLogo {
+		top:0;
+	}
+
+	.headerImg img {
+		display: none;
+	}
+
+	.content {
+		background: none;
+		margin:0;
+	}
+
+	.row {
+		margin: 0;
+		}
+
+	.sortiment .content {
+			margin:0;
+		}
+
+
+	// Bilder Kaffeekunde
+	.kaffekunde {
+		padding-bottom:0;
+
+		& .frame {
+			display: none;
+		}
+	}
 }
 
+// Reste
 .non-semantic-protector { position: relative; z-index: 1; }
-
-.checkbox input[type=checkbox] {
-	position: relative !important;
-}
+.checkbox input[type=checkbox] {position: relative !important;}

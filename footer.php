@@ -28,13 +28,13 @@
 			<a href="<?php echo home_url('/zahlungsarten/');?>">Zahlungsarten</a><br/>
 			<a href="<?php echo home_url('/agb/');?>">AGB</a><br/>
 		</div>
-		<div class="col-md-2 col-xs-3">
+		<div class="col-md-2 col-xs-6">
 			<h2>Kontakt</h2>
 			Loser Coffee<br/>
-			Strasse<br/>
-			33100 Paderborn<br/>
-			05251 | 12 23 45<br/>
-			info@loser-coffee.de
+			Kilianstr. 2<br/>
+			33098 Paderborn<br/>
+			05251 | 2 07 53 21<br/>
+			<a href="mailto:info@loser-coffee.de">info@loser-coffee.de</a>
 		</div>
 		<div class="col-md-2 noshow">
 
@@ -42,7 +42,7 @@
 		<div class="col-md-2 noshow">
 			<div class="footerLogo"></div>
 		</div>
-		<div class="col-md-2 col-xs-3">
+		<div class="col-md-2 col-xs-6">
 			<div class="footerBanner">
 
 					<h2>Mein<br/> Warenkorb</h2>
